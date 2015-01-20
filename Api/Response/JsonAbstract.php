@@ -1,11 +1,12 @@
 <?php
 namespace Europeana\Api\Response;
 
+use Penn\Http\Response;
 
 abstract class JsonAbstract extends ObjectAbstract {
 
 	/**
-	 * @param {\W3C\Http\Response} $Response
+	 * @param {Response} $Response
 	 * @param {string} $wskey
 	 */
 	public function __construct( $Response, $wskey = '' ) {
@@ -101,7 +102,7 @@ abstract class JsonAbstract extends ObjectAbstract {
 	}
 
 	/**
-	 * @param {\W3C\Http\Response} $Response
+	 * @param Response $Response
 	 * @param {string} $wskey
 	 */
 	protected function populate( $Response, $wskey = '' ) {

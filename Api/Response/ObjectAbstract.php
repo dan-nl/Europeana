@@ -1,9 +1,9 @@
 <?php
 namespace	Europeana\Api\Response;
-use Php\Exception;
+
+use Penn\Php\Exception;
 use ReflectionClass;
 use ReflectionProperty;
-
 
 abstract class ObjectAbstract extends ResponseAbstract {
 

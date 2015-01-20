@@ -1,7 +1,9 @@
 <?php
 namespace Europeana\Api\Response;
+
 use Europeana\Api\Helpers\Response as Response_Helper;
-use Php\Exception;
+use Penn\Php\Exception;
+use Penn\Http\Response;
 
 
 abstract class ResponseAbstract {
@@ -19,7 +21,7 @@ abstract class ResponseAbstract {
 	public $message_body;
 
 	/**
-	 * @var {\W3CHttp\Response}
+	 * @var Response
 	 */
 	public $Response;
 
@@ -66,11 +68,11 @@ abstract class ResponseAbstract {
 	}
 
 	/**
-	 * @param {\W3C\Http\Response} $Response
+	 * @param Response $Response
 	 * @param {string} $wskey
 	 */
 	protected function populate( $Response, $wskey = '' ) {
-		if ( $Response instanceof \W3C\Http\Response ) {
+		if ( $Response instanceof Response ) {
 			$this->Response = $Response;
 			$this->http_info = $Response->getHttpInfo();
 			$this->message_body = $Response->getMessageBody();
@@ -101,8 +103,8 @@ abstract class ResponseAbstract {
 	}
 
 	public function validate() {
-		if ( !( $this->Response instanceof \W3C\Http\Response ) ) {
-			throw new Exception( 'no valid \W3C\Http\Response provided' );
+		if ( !( $this->Response instanceof Response ) ) {
+			throw new Exception( 'no valid Penn\Http\Response provided' );
 		}
 
 		if ( $this->http_info['http_code'] !== 200 ) {

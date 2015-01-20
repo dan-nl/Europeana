@@ -1,8 +1,8 @@
 <?php
 namespace Europeana\Api\Request;
-use Php\Exception;
-use W3C\Http\Request;
 
+use Penn\Http\Request;
+use Penn\Php\Exception;
 
 /**
  * @link https://sites.google.com/site/projecteuropeana/documents/new-ingestion-process-and-portal-planning/api-1/api

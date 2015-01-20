@@ -1,8 +1,8 @@
 <?php
 namespace	Europeana\Api\Request\MyEuropeana;
-use Exception;
-use W3C\Http\Request;
 
+use Penn\Http\Request;
+use Penn\Php\Exception;
 
 /**
  * @link http://labs.europeana.eu/api/authentication

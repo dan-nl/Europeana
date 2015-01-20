@@ -1,6 +1,7 @@
 <?php
 namespace Europeana\Api\Helpers;
-use Exception;
+
+use Penn\Php\Exception;
 
 class Request {
 

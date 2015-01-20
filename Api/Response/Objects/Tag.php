@@ -9,22 +9,33 @@ use Europeana\Api\Response\ObjectAbstract;
 class Tag extends ObjectAbstract {
 
 	/**
-	 * @var {int}
+	 * @var {string}
 	 */
-	public $id;
+	public $edmPreview;
 
 	/**
 	 * @var {string}
+	 * the same as the Item object’s id
 	 */
 	public $europeanaId;
 
 	/**
 	 * @var {string}
+	 * the url to the europeana object in the portal
 	 */
 	public $guid;
 
 	/**
+	 * @var {int}
+	 * the tag id in the db?
+	 */
+	public $id;
+
+	/**
 	 * @var {string}
+	 * a url to the JSON representation of the object. note that a valid api key
+	 * needs to be at the end of the url in the form ?wskey=<your-api-key>. the
+	 * response includes the api key used in the query.
 	 */
 	public $link;
 
@@ -35,11 +46,7 @@ class Tag extends ObjectAbstract {
 
 	/**
 	 * @var {string}
-	 */
-	public $edmPreview;
-
-	/**
-	 * @var {string}
+	 * 3D|IMAGE|TEXT|SOUND|VIDEO
 	 */
 	public $type;
 

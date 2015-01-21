@@ -14,7 +14,8 @@ class Request {
 	 */
 	public static function getQueryParam( $string, $param = '', $default = '' ) {
 		if ( empty( $param ) ) {
-			throw new Exception( __METHOD__ . ' $param not specified' );
+			error_log( __METHOD__ . ' $param not specified' );
+			throw new Exception( 'param not specified', 25 );
 		}
 
 		$result = $default;
@@ -79,7 +80,7 @@ class Request {
 	 */
 	public static function normalizeQueryString( $query = '' ) {
 		if ( strstr( $query, 'query=' ) === false ) {
-			throw new Exception( 'query error: the query provided does not contain a query parameter; e.g., query=paris' );
+			throw new Exception( 'query error: the query provided does not contain a query parameter; e.g., query=paris', 99 );
 		}
 
 		// remove any portal references in the query provided

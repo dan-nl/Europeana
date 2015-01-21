@@ -72,11 +72,13 @@ class RecordSrw extends Request {
 		parent::validate();
 
 		if ( empty( $this->record_id ) || !is_string( $this->record_id ) ) {
-			throw new Exception( __METHOD__ . '() no record_id provided', 2 );
+			error_log( __METHOD__ . '() no record_id provided' );
+			throw new Exception( 'no record_id provided', 2 );
 		}
 
 		if ( empty( $this->wskey ) || !is_string( $this->wskey ) ) {
-			throw new Exception( __METHOD__ . '() no wskey provided', 2 );
+			error_log( __METHOD__ . '() no wskey provided' );
+			throw new Exception( 'no wskey provided', 2 );
 		}
 	}
 

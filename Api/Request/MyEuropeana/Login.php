@@ -50,17 +50,17 @@ class Login extends Request {
 	}
 
 	/**
-	 * @param {array} $options
+	 * @param {array} $properties
 	 */
-	protected function populate( $options = array() ) {
-		parent::populate( $options );
+	protected function populate( $properties = array() ) {
+		parent::populate( $properties );
 
-		if ( isset( $options['j_username'] ) ) {
-			$this->j_username = $options['j_username'];
+		if ( isset( $properties['j_username'] ) ) {
+			$this->j_username = $properties['j_username'];
 		}
 
-		if ( isset( $options['j_password'] ) ) {
-			$this->j_password = $options['j_password'];
+		if ( isset( $properties['j_password'] ) ) {
+			$this->j_password = $properties['j_password'];
 		}
 
 		$this->validate();
@@ -70,11 +70,13 @@ class Login extends Request {
 		parent::validate();
 
 		if ( empty( $this->j_username ) ) {
-			throw new Exception( __METHOD__ . ' no j_password provided', 2 );
+			error_log( __METHOD__ . '() no j_username provided' );
+			throw new Exception( 'no j_username provided', 2 );
 		}
 
 		if ( empty( $this->j_password ) ) {
-			throw new Exception( __METHOD__ . ' no j_password provided', 2 );
+			error_log( __METHOD__ . '() no j_password provided' );
+			throw new Exception( 'no j_password provided', 2 );
 		}
 	}
 

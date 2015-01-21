@@ -99,12 +99,15 @@ abstract class ResponseAbstract {
 
 		$msg .= PHP_EOL . 'API call info  : ' . PHP_EOL;
 		$msg .= print_r( $this->http_info, true );
-		throw new Exception( $msg );
+
+		error_log( __METHOD__ . '() ' . $msg );
+		throw new Exception( $msg, 99 );
 	}
 
 	public function validate() {
 		if ( !( $this->Response instanceof Response ) ) {
-			throw new Exception( 'no valid Penn\Http\Response provided' );
+			error_log( __METHOD__ . '() no valid Penn\Http\Response provided' );
+			throw new Exception( 'no valid Penn\Http\Response provided', 25 );
 		}
 
 		if ( $this->http_info['http_code'] !== 200 ) {

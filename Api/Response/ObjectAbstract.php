@@ -16,11 +16,13 @@ abstract class ObjectAbstract extends ResponseAbstract {
 
 
 	/**
-	 * @var string $property_name
+	 * @param array $properties
+	 * @param string $property_name
 	 */
-	protected function addObject( array $properties, $property_name = null ) {
+	protected function addObject( $properties = array(), $property_name = '' ) {
 		if ( empty( $property_name ) ) {
-			throw new Exception( 'no property name provided' );
+			error_log ( __METHOD__ . '() no property name provided' );
+			throw new Exception( 'no property name provided', 25 );
 		}
 
 		if ( is_array( $properties[ $property_name ] ) ) {

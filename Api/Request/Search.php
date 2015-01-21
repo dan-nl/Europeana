@@ -146,25 +146,25 @@ class Search extends Request {
 	}
 
 	/**
-	 * @param {array} $options
+	 * @param {array} $properties
 	 */
-	protected function populate( $options = array() ) {
-		parent::populate( $options );
+	protected function populate( $properties = array() ) {
+		parent::populate( $properties );
 
-		if ( isset( $options['query'] ) ) {
-			$this->query = $options['query'];
+		if ( isset( $properties['query'] ) ) {
+			$this->query = $properties['query'];
 		}
 
-		if ( isset( $options['rows'] ) ) {
-			$this->rows = (int) $options['rows'];
+		if ( isset( $properties['rows'] ) ) {
+			$this->rows = (int) $properties['rows'];
 		}
 
-		if ( isset( $options['start'] ) ) {
-			$this->start = (int) $options['start'];
+		if ( isset( $properties['start'] ) ) {
+			$this->start = (int) $properties['start'];
 		}
 
-		if ( isset( $options['wskey'] ) ) {
-			$this->wskey = $options['wskey'];
+		if ( isset( $properties['wskey'] ) ) {
+			$this->wskey = filter_var( $properties['wskey'], FILTER_SANITIZE_STRING );
 		}
 
 		$this->validate();
@@ -172,6 +172,16 @@ class Search extends Request {
 
 	public function validate() {
 		parent::validate();
+
+		if ( empty( $this->query ) ) {
+			error_log( __METHOD__ . '() no query provided' );
+			throw new Exception( 'no query provided', 2 );
+		}
+
+		if ( empty( $this->wskey ) ) {
+			error_log( __METHOD__ . '() no wskey provided' );
+			throw new Exception( 'no wsley provided', 2 );
+		}
 	}
 
 }

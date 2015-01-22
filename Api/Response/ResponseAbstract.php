@@ -42,6 +42,7 @@ abstract class ResponseAbstract {
 		$this->http_info = array();
 		$this->http_status_code_to_error = array(
 			200 => 'The request was executed successfully',
+			302 => 'The item request was moved temporarily',
 			400 => 'The request sent by the client was syntactically incorrect',
 			401 => 'Service was called with invalid argument(s); check the call URL',
 			404 => 'The requested resource is not available',

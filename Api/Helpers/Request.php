@@ -87,12 +87,8 @@ class Request {
 		$result =
 			str_replace(
 				array(
-					'http:',
-					'www',
-					'europeana.eu',
-					'/portal/',
-					'search.html',
-					'/',
+					'http://europeana.eu/portal/search.html',
+					'http://www.europeana.eu/portal/search.html',
 					'?'
 				),
 				'',

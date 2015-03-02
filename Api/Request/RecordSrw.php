@@ -46,7 +46,7 @@ class RecordSrw extends Request {
 
 	public function init() {
 		parent::init();
-		$this->endpoint = 'http://europeana.eu/api/v1/record%s.srw';
+		$this->endpoint = 'http://europeana.eu/api/v2/record%s.srw';
 		$this->record_id = '';
 		$this->wskey = '';
 	}

@@ -2,8 +2,8 @@
 namespace Europeana\Api\Response;
 
 use Europeana\Api\Helpers\Response as Response_Helper;
-use Penn\Php\Exception;
-use Penn\Http\Response;
+use Pennline\Php\Exception;
+use Pennline\Http\Response;
 
 
 abstract class ResponseAbstract {
@@ -107,8 +107,8 @@ abstract class ResponseAbstract {
 
 	public function validate() {
 		if ( !( $this->Response instanceof Response ) ) {
-			error_log( __METHOD__ . '() no valid Penn\Http\Response provided' );
-			throw new Exception( 'no valid Penn\Http\Response provided', 25 );
+			error_log( __METHOD__ . '() no valid Pennline\Http\Response provided' );
+			throw new Exception( 'no valid Pennline\Http\Response provided', 25 );
 		}
 
 		if ( $this->http_info['http_code'] !== 200 ) {

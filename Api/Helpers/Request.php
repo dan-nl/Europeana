@@ -1,7 +1,7 @@
 <?php
 namespace Europeana\Api\Helpers;
 
-use Penn\Php\Exception;
+use Pennline\Php\Exception;
 
 class Request {
 

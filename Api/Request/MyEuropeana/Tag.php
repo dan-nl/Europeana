@@ -1,7 +1,7 @@
 <?php
 namespace	Europeana\Api\Request\MyEuropeana;
 
-use Penn\Http\Request;
+use Pennline\Http\Request;
 
 
 /**

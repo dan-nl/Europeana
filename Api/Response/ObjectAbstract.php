@@ -1,7 +1,7 @@
 <?php
 namespace	Europeana\Api\Response;
 
-use Penn\Php\Exception;
+use Pennline\Php\Exception;
 use ReflectionClass;
 use ReflectionProperty;
 

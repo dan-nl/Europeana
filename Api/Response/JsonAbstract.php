@@ -1,7 +1,7 @@
 <?php
 namespace Europeana\Api\Response;
 
-use Penn\Http\Response;
+use Pennline\Http\Response;
 
 abstract class JsonAbstract extends ObjectAbstract {
 

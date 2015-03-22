@@ -1,3 +1,2 @@
-# Europeana
-
-php classes that implement Europeana’s API v2.
+# europeana api
+php classes that implement europeana’s api v2

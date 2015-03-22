@@ -1,2 +1,1 @@
-# europeana api
-php classes that implement europeana’s api v2
+this repo has been replaced by the [europeana-api](https://github.com/dan-nl/europeana-api) repo
